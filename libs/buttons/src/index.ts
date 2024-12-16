@@ -1,1 +1,1 @@
-export * from './lib/buttons';
+export * from './standard-button/buttons';

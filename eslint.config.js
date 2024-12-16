@@ -1,4 +1,6 @@
 const nx = require('@nx/eslint-plugin');
+const reactHooks = require('eslint-plugin-react-hooks');
+const prettierConfig = require('./.prettierrc.js');
 
 module.exports = [
   ...nx.configs['flat/base'],
@@ -28,6 +30,10 @@ module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     // Override or add rules here
-    rules: {},
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'prettier/prettier': ['error', prettierConfig],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    },
   },
 ];
