@@ -1,0 +1,9 @@
+{
+  "name": "buttons",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/buttons/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project buttons --web",
+  "targets": {}
+}
