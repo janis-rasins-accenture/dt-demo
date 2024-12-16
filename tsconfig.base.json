@@ -17,7 +17,8 @@
     "paths": {
       "@dt-demo/buttons": ["libs/buttons/src/index.ts"],
       "@dt-demo/design-tokens": ["libs/design-tokens/src/index.ts"],
-      "@dt-demo/foundation": ["libs/foundation/src/index.ts"]
+      "@dt-demo/foundation": ["libs/foundation/src/index.ts"],
+      "@dt-demo/storybook-host": ["libs/storybook-host/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

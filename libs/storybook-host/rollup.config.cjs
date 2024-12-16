@@ -5,7 +5,7 @@ const svg = require('@svgr/rollup');
 module.exports = withNx(
   {
     main: './src/index.ts',
-    outputPath: '../../dist/libs/buttons',
+    outputPath: '../../dist/libs/storybook-host',
     tsConfig: './tsconfig.lib.json',
     compiler: 'babel',
     external: ['react', 'react-dom', 'react/jsx-runtime'],
