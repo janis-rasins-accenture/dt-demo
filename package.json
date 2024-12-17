@@ -2,7 +2,16 @@
   "name": "@dt-demo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint:check": "eslint --config .eslintrc --ext .ts,.tsx,.js,.jsx .",
+    "lint:fix": "eslint --config .eslintrc --cache --fix --ext .ts,.tsx,.js,.jsx .",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,js,jsx,html,yml,md}\" \"!**/dist/**\" \"!**/coverage/**\" \"!**/CHANGELOG.md\" \"!**/.nx/**\"",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,json,js,jsx,html,yml,md}\" \"!**/dist/**\" \"!**/coverage/**\" \"!**/CHANGELOG.md\" \"!**/.nx/**\"",
+    "format:design-tokens": "prettier --ignore-path .gitignore --write \"libs/design-tokens/src/figma-response/*.json\"",
+    "start": "nx serve dt-demo",
+    "start:storybook": "nx storybook storybook-host",
+    "figma:design-tokens": "tsx libs/design-tokens/src/design-tokens-fetcher/get-figma-design-tokens.ts"
+  },
   "private": true,
   "dependencies": {
     "react": "18.3.1",
@@ -31,6 +40,7 @@
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/core-server": "^8.4.6",
     "@storybook/react-vite": "^8.4.6",
+    "@storybook/types": "^8.4.7",
     "@svgr/rollup": "^8.1.0",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
@@ -38,7 +48,7 @@
     "@swc/helpers": "~0.5.11",
     "@testing-library/react": "15.0.6",
     "@types/jest": "^29.5.12",
-    "@types/node": "18.16.9",
+    "@types/node": "^20.12.12",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
     "@types/react-is": "18.3.0",
@@ -48,6 +58,7 @@
     "babel-jest": "^29.7.0",
     "babel-plugin-styled-components": "1.10.7",
     "core-js": "^3.36.1",
+    "dotenv": "^16.4.7",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "2.31.0",
@@ -63,15 +74,21 @@
     "rollup": "^4.14.0",
     "storybook": "^8.4.6",
     "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
     "tslib": "^2.3.0",
+    "tsx": "^4.19.2",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.13.0",
-    "vite": "^5.0.0",
-    "vitest": "^1.3.1"
+    "vite": "^5.4.12",
+    "vitest": "^1.6.1"
   },
+  "workspaces": [
+    "libs/*"
+  ],
   "overrides": {
     "webpack": "^5.94.0",
-    "cross-spawn": "^7.0.5"
+    "cross-spawn": "^7.0.5",
+    "koa": "^2.15.4",
+    "esbuild": "^0.25.0",
+    "axios": "^1.6.0"
   }
 }

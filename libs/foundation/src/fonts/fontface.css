@@ -1,0 +1,66 @@
+/* Work Sans */
+
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src:
+    local('WorkSans-Regular'),
+    url('./work-sans/WorkSans-Regular.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'WorkSans-SemiBold';
+  src:
+    local('WorkSans-SemiBold'),
+    url('./work-sans/WorkSans-SemiBold.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'WorkSans-Bold';
+  src:
+    local('WorkSans-Bold'),
+    url('./work-sans/WorkSans-Bold.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'WorkSans-Medium';
+  src:
+    local('WorkSans-Medium'),
+    url('./work-sans/WorkSans-Medium.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'WorkSansItalic-Regular';
+  src:
+    local('WorkSansItalic-Regular'),
+    url('./work-sans/WorkSansItalic-Regular.woff') format('truetype');
+}
+
+/* Poppins */
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src:
+    local('Poppins-Bold'),
+    url('./poppins/Poppins-Bold.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-Italic';
+  src:
+    local('Poppins-Italic'),
+    url('./poppins/Poppins-Italic.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src:
+    local('Poppins-Regular'),
+    url('./poppins/Poppins-Regular.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src:
+    local('Poppins-SemiBold'),
+    url('./poppins/Poppins-SemiBold.woff') format('truetype');
+}

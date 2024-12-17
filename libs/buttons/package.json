@@ -1,4 +1,7 @@
 {
   "name": "@dt-demo/buttons",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "dependencies": {
+    "@dt-demo/foundation": "0.0.1"
+  }
 }
