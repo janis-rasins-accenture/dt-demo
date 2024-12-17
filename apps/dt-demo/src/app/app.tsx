@@ -1,15 +1,13 @@
-import styled from 'styled-components';
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { ThemeProvider, Brand, Variant } from '@dt-demo/foundation';
+import { StyledApp, StyledTitle } from './styles/app.styles';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="dt-demo" />
-    </StyledApp>
+    <ThemeProvider brand={Brand.MAIN} mode={Variant.LIGHT}>
+      <StyledApp>
+        <StyledTitle>Hello world!</StyledTitle>
+      </StyledApp>
+    </ThemeProvider>
   );
 }
 

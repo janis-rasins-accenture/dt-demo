@@ -1,1 +1,2 @@
-export * from './lib/design-tokens';
+export * from './types';
+export * from './figma-response';

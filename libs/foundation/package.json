@@ -1,4 +1,11 @@
 {
   "name": "@dt-demo/foundation",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "styled-components": "^6.1.13"
+  },
+  "dependencies": {
+    "@dt-demo/design-tokens": "0.0.1"
+  }
 }
