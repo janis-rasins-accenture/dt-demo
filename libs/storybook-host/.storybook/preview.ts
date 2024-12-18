@@ -3,7 +3,7 @@ import WithThemeProvider from './utils/with-theme-provider';
 import { Brand, Variant } from '@dt-demo/foundation';
 
 export const globalTypes = {
-  platform: {
+  brand: {
     name: 'Theme',
     description: 'Theme for components',
     defaultValue: Brand.MAIN,

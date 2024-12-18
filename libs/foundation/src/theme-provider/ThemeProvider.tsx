@@ -15,14 +15,14 @@ export const ThemeProvider = ({ children, mode, brand }: ThemeProviderProps) => 
   const renderFont = () => {
     switch (brand) {
       case Brand.SIDE:
-        return <WorkSans />;
+        return <Poppins />;
       case Brand.MAIN:
       default:
-        return <Poppins />;
+        return <WorkSans />;
     }
   };
   return (
-    <OriginalThemeProvider theme={allDesignTokens[brand as Brand][mode]}>
+    <OriginalThemeProvider theme={allDesignTokens[brand][mode]}>
       {renderFont()}
       <Reset />
       {children}
