@@ -4,7 +4,7 @@ import { StyledButton, StyledIconContainer } from './styles/standard-button.styl
 export const StandardButton = ({ label, icon, ...rest }: StandardButtonProps) => {
   return (
     <StyledButton {...rest}>
-      <StyledIconContainer>{icon}</StyledIconContainer>
+      {icon && <StyledIconContainer>{icon}</StyledIconContainer>}
       {label}
     </StyledButton>
   );

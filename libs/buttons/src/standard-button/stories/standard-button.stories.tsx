@@ -25,7 +25,7 @@ type Story = StoryObj<typeof StandardButton>;
 
 export const Primary: Story = {
   args: {
-    variant: 'primary',
+    $variant: 'primary',
     label: 'Button Label',
     onClick: action('onClick', { depth: 5 }),
   },
@@ -33,7 +33,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
+    $variant: 'secondary',
     label: 'Button Label',
     onClick: action('onClick', { depth: 5 }),
   },
@@ -41,25 +41,25 @@ export const Secondary: Story = {
 
 export const FullWidth: Story = {
   args: {
-    variant: 'primary',
+    $variant: 'primary',
     label: 'Button Label',
     onClick: action('onClick', { depth: 5 }),
-    isFullWidth: true,
+    $isFullWidth: true,
   },
 };
 
 export const Inverted: Story = {
   args: {
-    variant: 'primary',
+    $variant: 'primary',
     label: 'Button Label',
-    isInverted: true,
+    $isInverted: true,
     onClick: action('onClick', { depth: 5 }),
   },
 };
 
 export const WithIcon: Story = {
   args: {
-    variant: 'primary',
+    $variant: 'primary',
     label: 'Button Label',
     onClick: action('onClick', { depth: 5 }),
     icon: <Placeholder />,
@@ -74,8 +74,8 @@ export const WithIcons: Story = {
   },
   render: (args) => (
     <>
-      <StandardButton {...args} variant="primary" />
-      <StandardButton {...args} variant="secondary" />
+      <StandardButton {...args} $variant="primary" />
+      <StandardButton {...args} $variant="secondary" />
     </>
   ),
 };

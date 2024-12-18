@@ -8,9 +8,9 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,json,js,jsx,html,yml,md}\" \"!**/dist/**\" \"!**/coverage/**\" \"!**/CHANGELOG.md\" \"!**/fa-cli-test/**\" \"!**/.github/workflows/**\" \"!**/fa-cli-test-npm/**\" \"!**/.nx/**\"",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,json,js,jsx,html,yml,md}\" \"!**/dist/**\" \"!**/coverage/**\" \"!**/CHANGELOG.md\" \"!**/fa-cli-test/**\" \"!**/.github/workflows/**\" \"!**/fa-cli-test-npm/**\" \"!**/.nx/**\"",
     "format:designTokens": "prettier --ignore-path .gitignore --write \"libs/design-tokens/src/figma-response/*.json\"",
-    "start": "npx nx serve dt-demo",
-    "start:storybook": "npx nx storybook storybook-host",
-    "get:designTokens": "npx tsx libs/design-tokens/src/design-tokens-fetcher/get-figma-design-tokens.ts"
+    "start": "nx serve dt-demo",
+    "start:storybook": "nx storybook storybook-host",
+    "get:designTokens": "tsx libs/design-tokens/src/design-tokens-fetcher/get-figma-design-tokens.ts"
   },
   "private": true,
   "dependencies": {

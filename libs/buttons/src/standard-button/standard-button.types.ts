@@ -5,12 +5,12 @@ export interface StandardButtonProps extends ButtonHTMLAttributes<HTMLButtonElem
    * Renders one of the selected visual styles
    * @default primary
    */
-  variant?: 'primary' | 'secondary';
+  $variant?: 'primary' | 'secondary';
   /**
    * Determines whether the color scheme is inverted.
    * @default false
    */
-  isInverted?: boolean;
+  $isInverted?: boolean;
   /**
    * Optional icon to be displayed on the left of the button label
    */
@@ -23,5 +23,5 @@ export interface StandardButtonProps extends ButtonHTMLAttributes<HTMLButtonElem
    * Sets the width of the button container to either fill the container or be limited to the width of the content
    * @default false
    */
-  isFullWidth?: boolean;
+  $isFullWidth?: boolean;
 }

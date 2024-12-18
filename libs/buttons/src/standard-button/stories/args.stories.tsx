@@ -12,17 +12,17 @@ const meta: Meta<typeof StandardButton> = {
     controls: { expanded: true },
   },
   argTypes: {
-    variant: {
+    $variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'call-out'],
+      options: ['primary', 'secondary'],
       type: 'string',
       description: 'Renders one of the selected visual styles.',
       table: {
         defaultValue: { summary: 'primary' },
-        type: { summary: '"primary" | "secondary" | "call-out"' },
+        type: { summary: '"primary" | "secondary"' },
       },
     },
-    isFullWidth: {
+    $isFullWidth: {
       control: { type: 'boolean' },
       type: 'string',
       description: 'Sets button width.',
@@ -40,7 +40,7 @@ const meta: Meta<typeof StandardButton> = {
     },
     icon: {
       control: { type: 'select' },
-      options: ['No icon', 'Check', 'Placeholder', 'Basket'],
+      options: ['No icon', 'Placeholder'],
       description: 'Sets icon to be displayed left of the button label.',
       mapping: {
         Placeholder: <Placeholder />,
@@ -50,7 +50,7 @@ const meta: Meta<typeof StandardButton> = {
         defaultValue: { summary: 'No icon' },
       },
     },
-    isInverted: {
+    $isInverted: {
       control: { type: 'boolean' },
       description: 'Determines whether the color scheme is inverted',
       table: {
@@ -95,10 +95,10 @@ export const Args: StoryObj<React.PropsWithChildren<StandardButtonProps>> = ({
 };
 
 Args.args = {
-  variant: 'primary',
-  isFullWidth: false,
-  label: 'Default',
+  $variant: 'primary',
+  $isFullWidth: false,
+  label: 'Default label',
   'aria-label': 'Default Button',
   disabled: false,
-  isInverted: false,
+  $isInverted: false,
 };

@@ -5,7 +5,7 @@ import { Brand, Variant } from '@dt-demo/foundation';
 export const globalTypes = {
   brand: {
     name: 'Theme',
-    description: 'Theme for components',
+    description: 'Brand theme for components',
     defaultValue: Brand.MAIN,
     dynamicTitle: true,
     toolbar: {
@@ -20,7 +20,7 @@ export const globalTypes = {
   },
   mode: {
     name: 'Mode',
-    description: 'Global theme for components',
+    description: 'Color theme for components',
     defaultValue: Variant.LIGHT,
     dynamicTitle: true,
     toolbar: {
@@ -38,7 +38,13 @@ export const globalTypes = {
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
-    backgrounds: { disable: true },
+    backgrounds: {
+      disable: true,
+      values: [
+        { name: 'light', value: '#fff' },
+        { name: 'dark', value: '#333' },
+      ],
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

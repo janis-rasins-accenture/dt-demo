@@ -18,6 +18,11 @@ const config: StorybookConfig = {
   viteFinal: async (config) =>
     mergeConfig(config, {
       plugins: [react(), nxViteTsPaths()],
+      server: {
+        watch: {
+          usePolling: true,
+        },
+      },
     }),
 };
 
