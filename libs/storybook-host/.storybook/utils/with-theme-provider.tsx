@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { StoryFn, StoryContext } from '@storybook/react';
 import { Globals } from '@storybook/types';
-import { Brand, Variant, ThemeProvider, designTokens } from '@dt-demo/foundation';
+import { Brand, Variant, designTokens, ThemeProvider } from '../../../foundation/src/';
+import { ThemeProvider as NativeThemeProvider } from '../../../foundation-native/src/';
 
 interface StyledDivProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -29,8 +30,6 @@ const WithThemeProvider = (Story: StoryFn, context: StoryContext) => {
   const isInDocs = context.viewMode === 'docs';
   const isSheetComponent = context.id.toLowerCase().includes('sheet');
 
-  // Solution to address inverted component variants not showing up against the white background
-
   const $variant = context.args['$variant'] || context.args['$color'] || null;
   const isInverse = context.args['$inverse'] || context.args['$isInverted'] || null;
 
@@ -40,16 +39,19 @@ const WithThemeProvider = (Story: StoryFn, context: StoryContext) => {
     : isInverse === true;
 
   const background =
-    isInvertedVariant || isInverseCondition ? '#262626' : currentTheme.colors['page-bg-full'];
-
+    isInvertedVariant || isInverseCondition
+      ? currentTheme.colors['page-bg-full-inverted']
+      : currentTheme.colors['page-bg-full'];
   return (
-    <ThemeProvider brand={brand} mode={mode}>
-      <StyledDiv
-        $bg={isSheetComponent ? currentTheme.colors['page-bg-full'] : background}
-        $inDocs={isInDocs}
-      >
-        <Story {...context} />
-      </StyledDiv>
+    <ThemeProvider mode={mode} brand={brand}>
+      <NativeThemeProvider mode={mode} brand={brand}>
+        <StyledDiv
+          $bg={isSheetComponent ? currentTheme.colors['page-bg-full'] : background}
+          $inDocs={isInDocs}
+        >
+          <Story {...context} />
+        </StyledDiv>
+      </NativeThemeProvider>
     </ThemeProvider>
   );
 };

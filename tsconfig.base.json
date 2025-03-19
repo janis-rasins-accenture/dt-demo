@@ -16,8 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@dt-demo/buttons": ["libs/buttons/src/index.ts"],
+      "@dt-demo/buttons-native": ["libs/buttons-native/src/index.ts"],
       "@dt-demo/design-tokens": ["libs/design-tokens/src/index.ts"],
       "@dt-demo/foundation": ["libs/foundation/src/index.ts"],
+      "@dt-demo/foundation-native": ["libs/foundation-native/src/index.ts"],
       "@dt-demo/storybook-host": ["libs/storybook-host/src/index.ts"]
     }
   },

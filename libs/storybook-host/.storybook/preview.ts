@@ -1,6 +1,6 @@
 import { Preview } from '@storybook/react';
 import WithThemeProvider from './utils/with-theme-provider';
-import { Brand, Variant } from '@dt-demo/foundation';
+import { Brand, Variant } from '../../foundation/src/';
 
 export const globalTypes = {
   brand: {
