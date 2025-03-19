@@ -1,0 +1,9 @@
+{
+  "name": "dt-demo-native-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/dt-demo-native-e2e/src",
+  "implicitDependencies": ["dt-demo-native"],
+  "// targets": "to see all targets run: nx show project dt-demo-native-e2e --web",
+  "targets": {}
+}
