@@ -1,0 +1,28 @@
+{
+  "name": "buttons-native",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/buttons-native/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/buttons-native",
+        "tsConfig": "libs/buttons-native/tsconfig.lib.json",
+        "project": "libs/buttons-native/package.json",
+        "entryFile": "libs/buttons-native/src/index.ts",
+        "external": ["react/jsx-runtime", "react-native", "react", "react-dom"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "libs/buttons-native/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

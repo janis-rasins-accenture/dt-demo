@@ -1,0 +1,12 @@
+{
+  "name": "@dt-demo/foundation-native",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "react": "18.3.1",
+    "react-native": "0.74.7",
+    "styled-components": "^6.1.16"
+  },
+  "dependencies": {
+    "@dt-demo/design-tokens": "0.0.1"
+  }
+}

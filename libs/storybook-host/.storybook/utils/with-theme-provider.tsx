@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { StoryFn, StoryContext } from '@storybook/react';
 import { Globals } from '@storybook/types';
-import { Brand, Variant, ThemeProvider, designTokens } from '@dt-demo/foundation';
+import { Brand, Variant, designTokens, WorkSans, Poppins, Reset } from '../../../foundation/src/';
+import { ThemeProvider as NativeThemeProvider } from 'styled-components/native';
 
 interface StyledDivProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -42,14 +43,28 @@ const WithThemeProvider = (Story: StoryFn, context: StoryContext) => {
   const background =
     isInvertedVariant || isInverseCondition ? '#262626' : currentTheme.colors['page-bg-full'];
 
+  const renderFont = () => {
+    switch (brand) {
+      case Brand.SIDE:
+        return <Poppins />;
+      case Brand.MAIN:
+      default:
+        return <WorkSans />;
+    }
+  };
+
   return (
-    <ThemeProvider brand={brand} mode={mode}>
-      <StyledDiv
-        $bg={isSheetComponent ? currentTheme.colors['page-bg-full'] : background}
-        $inDocs={isInDocs}
-      >
-        <Story {...context} />
-      </StyledDiv>
+    <ThemeProvider theme={currentTheme}>
+      {renderFont()}
+      <Reset />
+      <NativeThemeProvider theme={currentTheme}>
+        <StyledDiv
+          $bg={isSheetComponent ? currentTheme.colors['page-bg-full'] : background}
+          $inDocs={isInDocs}
+        >
+          <Story {...context} />
+        </StyledDiv>
+      </NativeThemeProvider>
     </ThemeProvider>
   );
 };

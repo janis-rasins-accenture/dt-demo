@@ -1,0 +1,8 @@
+{
+  "name": "@dt-demo/buttons-native",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "0.74.7"
+  }
+}
