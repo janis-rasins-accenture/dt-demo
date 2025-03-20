@@ -1,9 +1,9 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { StoryFn, StoryContext } from '@storybook/react';
 import { Globals } from '@storybook/types';
-import { Brand, Variant, designTokens, WorkSans, Poppins, Reset } from '../../../foundation/src/';
-import { ThemeProvider as NativeThemeProvider } from 'styled-components/native';
+import { Brand, Variant, designTokens, ThemeProvider } from '../../../foundation/src/';
+import { ThemeProvider as NativeThemeProvider } from '../../../foundation-native/src/';
 
 interface StyledDivProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -30,8 +30,6 @@ const WithThemeProvider = (Story: StoryFn, context: StoryContext) => {
   const isInDocs = context.viewMode === 'docs';
   const isSheetComponent = context.id.toLowerCase().includes('sheet');
 
-  // Solution to address inverted component variants not showing up against the white background
-
   const $variant = context.args['$variant'] || context.args['$color'] || null;
   const isInverse = context.args['$inverse'] || context.args['$isInverted'] || null;
 
@@ -41,23 +39,12 @@ const WithThemeProvider = (Story: StoryFn, context: StoryContext) => {
     : isInverse === true;
 
   const background =
-    isInvertedVariant || isInverseCondition ? '#262626' : currentTheme.colors['page-bg-full'];
-
-  const renderFont = () => {
-    switch (brand) {
-      case Brand.SIDE:
-        return <Poppins />;
-      case Brand.MAIN:
-      default:
-        return <WorkSans />;
-    }
-  };
-
+    isInvertedVariant || isInverseCondition
+      ? currentTheme.colors['page-bg-full-inverted']
+      : currentTheme.colors['page-bg-full'];
   return (
-    <ThemeProvider theme={currentTheme}>
-      {renderFont()}
-      <Reset />
-      <NativeThemeProvider theme={currentTheme}>
+    <ThemeProvider mode={mode} brand={brand}>
+      <NativeThemeProvider mode={mode} brand={brand}>
         <StyledDiv
           $bg={isSheetComponent ? currentTheme.colors['page-bg-full'] : background}
           $inDocs={isInDocs}

@@ -39,15 +39,6 @@ export const SecondaryNative: Story = {
   },
 };
 
-export const FullWidthNative: Story = {
-  args: {
-    $variant: 'primary',
-    label: 'Button Label',
-    onPress: action('onPress', { depth: 5 }),
-    $isFullWidth: true,
-  },
-};
-
 export const InvertedNative: Story = {
   args: {
     $variant: 'primary',
