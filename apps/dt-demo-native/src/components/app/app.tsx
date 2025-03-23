@@ -3,7 +3,7 @@ import { useColorScheme, View } from 'react-native';
 import { ThemeProvider } from '@dt-demo/foundation-native';
 import { Brand, Variant } from '@dt-demo/design-tokens';
 import { StyledSafeAreaView, StyledScrollView, StyledStatusBar } from './app.styles';
-import { StandardButton } from '@dt-demo/buttons-native';
+import Counter from '../counter/counter';
 
 export const App = () => {
   const mode = useColorScheme() ?? 'light';
@@ -14,8 +14,8 @@ export const App = () => {
       <StyledStatusBar $isDarkMode={isDarkMode} />
       <StyledSafeAreaView $isDarkMode={isDarkMode}>
         <StyledScrollView $isDarkMode={isDarkMode}>
-          <View style={{ padding: 30, alignSelf: 'center' }}>
-            <StandardButton label="Button label" />
+          <View>
+            <Counter />
           </View>
         </StyledScrollView>
       </StyledSafeAreaView>

@@ -18,6 +18,7 @@ export const StyledSafeAreaView = styled(SafeAreaView)<StyledSafeAreaViewProps>`
 
 export const StyledScrollView = styled(ScrollView)<StyledScrollViewProps>`
   background-color: ${({ $isDarkMode }) => mode($isDarkMode)};
+  padding: 16px;
 `;
 export const StyledStatusBar = styled(StatusBar)<StyledStatusBarProps>`
   background-color: ${({ $isDarkMode }) => mode($isDarkMode)};
