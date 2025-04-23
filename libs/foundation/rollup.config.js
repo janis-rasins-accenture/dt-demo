@@ -5,11 +5,11 @@ const svg = require('@svgr/rollup');
 module.exports = withNx(
   {
     main: './src/index.ts',
-    outputPath: '../../dist/libs/design-tokens',
+    outputPath: './dist',
     tsConfig: './tsconfig.lib.json',
     compiler: 'babel',
     external: ['react', 'react-dom', 'react/jsx-runtime'],
-    format: ['esm'],
+    format: ['esm', 'cjs'],
     assets: [{ input: '.', output: '.', glob: 'README.md' }],
   },
   {
@@ -22,7 +22,12 @@ module.exports = withNx(
       }),
       url({
         limit: 10000, // 10kB
+        include: ['**/*.woff', '**/*.woff2', '**/*.ttf'],
       }),
     ],
+    output: {
+      interop: 'auto',
+      sourcemap: false,
+    },
   }
 );

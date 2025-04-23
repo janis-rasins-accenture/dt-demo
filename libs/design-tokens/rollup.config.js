@@ -1,15 +1,16 @@
 const { withNx } = require('@nx/rollup/with-nx');
 const url = require('@rollup/plugin-url');
 const svg = require('@svgr/rollup');
+const terser = require('@rollup/plugin-terser');
 
 module.exports = withNx(
   {
     main: './src/index.ts',
-    outputPath: '../../dist/libs/foundation',
+    outputPath: '../../dist/libs/design-tokens',
     tsConfig: './tsconfig.lib.json',
     compiler: 'babel',
     external: ['react', 'react-dom', 'react/jsx-runtime'],
-    format: ['esm'],
+    format: ['esm', 'cjs'],
     assets: [{ input: '.', output: '.', glob: 'README.md' }],
   },
   {
@@ -23,6 +24,7 @@ module.exports = withNx(
       url({
         limit: 10000, // 10kB
       }),
+      terser(),
     ],
   }
 );

@@ -4,25 +4,6 @@
   "sourceRoot": "libs/foundation-native/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/foundation-native",
-        "tsConfig": "libs/foundation-native/tsconfig.lib.json",
-        "project": "libs/foundation-native/package.json",
-        "entryFile": "libs/foundation-native/src/index.ts",
-        "external": ["react/jsx-runtime", "react-native", "react", "react-dom"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "assets": [
-          {
-            "glob": "libs/foundation-native/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
-      }
-    }
-  }
+  "// targets": "to see all targets run: nx show project foundation-native --web",
+  "targets": {}
 }

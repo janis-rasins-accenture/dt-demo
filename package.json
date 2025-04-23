@@ -11,7 +11,10 @@
     "start:storybook": "nx storybook storybook-host",
     "figma:design-tokens": "tsx libs/design-tokens/src/design-tokens-fetcher/get-figma-design-tokens.ts",
     "android": "npx nx run-android dt-demo-native",
-    "ios": "npx nx run-ios dt-demo-native"
+    "ios": "npx nx run-ios dt-demo-native",
+    "build:foundation": "nx build --project=foundation --skip-nx-cache",
+    "test": "npx nx run-many -t test --parallel=true --skip-nx-cache --coverage",
+    "build": "npx nx run-many --target=build --all --skip-nx-cache"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +49,7 @@
     "@react-native/eslint-config": "0.74.89",
     "@react-native/metro-config": "0.74.89",
     "@react-native/typescript-config": "0.74.89",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-url": "^8.0.2",
     "@storybook/addon-actions": "^8.6.7",
     "@storybook/addon-essentials": "8.6.7",
