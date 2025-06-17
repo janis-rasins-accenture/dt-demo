@@ -4,13 +4,15 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
-  stories: ['../../**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../../**/*.mdx', '../../**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-native-web-vite',
     options: {},
   },
-
+  core: {
+    enableCrashReports: false,
+  },
   viteFinal: async (config) =>
     mergeConfig(config, {
       plugins: [nxViteTsPaths(), svgr({ include: '**/*.svg' })],

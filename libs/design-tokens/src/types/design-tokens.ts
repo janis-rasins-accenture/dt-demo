@@ -84,7 +84,7 @@ export enum Type {
 }
 
 export enum VariableCollectionName {
-  SYS = 'System',
-  REF = 'References',
+  SYS = 'Semantic',
+  REF = 'Primitives',
   COMP = 'Component',
 }
